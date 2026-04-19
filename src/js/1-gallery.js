@@ -73,7 +73,7 @@ const images = [
 
 const createGalleryItemTemplate = ({ preview, original, description }) => { 
     return `
-    <li class="gallery-item" product-card">
+    <li class="gallery-item product-card">
       <a class="gallery-link" href="${original}">
         <img 
         class="gallery-image product-card-img"

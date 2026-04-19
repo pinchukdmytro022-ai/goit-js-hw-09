@@ -1,5 +1,8 @@
 const feedbackFormEl = document.querySelector('.js-feedback-form');
-let formData = {};
+let formData = {
+    email: '',
+    message: '',
+};
 
 const fillFormFields = () => {
     const formDataFromLS = JSON.parse(localStorage.getItem('feedback-form-state'));
@@ -35,10 +38,13 @@ const onFeedbackFormSubmit = event => {
         return;
     }
 
+    console.log(formData);
     event.target.reset();
     localStorage.removeItem('feedback-form-state');
-    console.log(formData);
-    formData = {};
+    formData = {
+        email: '',
+        message: '',
+    };
 };
 
 feedbackFormEl.addEventListener('input', onFormFieldChange);
